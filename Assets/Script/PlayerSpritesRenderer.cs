@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerSpritesRenderer : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
     private PlayerMoving playerMoving;
+    public SpriteRenderer spriteRenderer { get; private set; }
     public Sprite idle;
     public Sprite jump;
     public Sprite slide;
@@ -22,14 +22,17 @@ public class PlayerSpritesRenderer : MonoBehaviour
     private void OnDisable()
     {
         spriteRenderer.enabled = false;
+        run.enabled = false;
     }
     private void LateUpdate()
     {
+        
         run.enabled = playerMoving.running;  
         if (playerMoving.jumping)
         {
             spriteRenderer.sprite = jump;
-        }else if (playerMoving.sliding)
+        }
+        else if (playerMoving.sliding)
         {
             spriteRenderer.sprite = slide;
         }else if (!playerMoving.running)
