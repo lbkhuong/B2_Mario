@@ -8119,7 +8119,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -10766,6 +10766,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e58b000a995243149b0d4990ef5ea2a7, type: 3}
   - {fileID: 8300000, guid: 3fa0f8fcd4874e34685105caa70318ff, type: 3}
   - {fileID: 8300000, guid: 2d2e3beb2ecd18b42a291f46ba58c838, type: 3}
+  - {fileID: 8300000, guid: 18fe9e6a88527934e86f6155bb9868dc, type: 3}
+  - {fileID: 8300000, guid: 1508e9f8dbd68554685e11fa45ea3426, type: 3}
+  - {fileID: 8300000, guid: 8390a076c34f3494dba69fd830258981, type: 3}
   musicSource: {fileID: 1599385912}
   effectsSource: {fileID: 912159342}
 --- !u!4 &1982724417
@@ -11839,7 +11842,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3611261760737888593, guid: 0724cbeea21c46642b57c4ace196dea7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 107
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3611261760737888593, guid: 0724cbeea21c46642b57c4ace196dea7, type: 3}
       propertyPath: m_LocalPosition.y

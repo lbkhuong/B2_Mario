@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     }
     private void NewGame()
     {
+        SoundManager.Instance.PlayMusic(SoundManager.PlayList.music);
         lives = 3;
         LoadLvl(1, 1);
     }
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
         this.world = world;
         this.stage = stage;
         SceneManager.LoadScene($"{world}-{stage}");
+        SoundManager.Instance.ContinueMusic();
     }
     public void ResetLvl(float delay)
     {

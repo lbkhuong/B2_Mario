@@ -41,7 +41,8 @@ public class Player : MonoBehaviour
         smallRenderer.enabled = false;
         bigRenderer.enabled = false;
         deathAnimation.enabled = true;
-        SoundManager.Instance.PlaySound(SoundManager.PlayList.marioDied);
+        SoundManager.Instance.PauseMusic();
+        SoundManager.Instance.PlaySound(SoundManager.PlayList.marioDied);    
         GameManager.instance.ResetLvl(3f);
     }
 }

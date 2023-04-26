@@ -30,12 +30,14 @@ public class Goomba : MonoBehaviour
     }
     private void Hit()
     {
+        SoundManager.Instance.PlaySound(SoundManager.PlayList.shellBump);
         GetComponent<AnimatedSprites>().enabled = false;
         GetComponent<DeathAnimation>().enabled = true;
         Destroy(gameObject, 3f);
     }
     private void Flatten()
     {
+        SoundManager.Instance.PlaySound(SoundManager.PlayList.marioStomp);
         GetComponent<Collider2D>().enabled = false;
         GetComponent<EntityMovement>().enabled = false;
         GetComponent<AnimatedSprites>().enabled = false;

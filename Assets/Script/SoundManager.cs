@@ -15,6 +15,9 @@ public class SoundManager : MonoBehaviour
         marioDied = 5,
         marioPickCoin = 6,
         marioKickShell = 7,
+        music = 8,
+        marioStomp = 9,
+        shellBump = 10,
     }
     public List<AudioClip> audioLists;
     [SerializeField] private AudioSource musicSource;

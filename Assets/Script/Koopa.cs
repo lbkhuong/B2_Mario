@@ -27,6 +27,7 @@ public class Koopa : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
+
         if (shelled && other.CompareTag("Player"))
         {
             if (!pushed)
@@ -36,9 +37,13 @@ public class Koopa : MonoBehaviour
             }
             else
             {
-                Player player = GetComponent<Player>();
+                Player player = other.GetComponent<Player>();
                 player.Hit();
             }
+        }
+        else if (!shelled && other.gameObject.layer == LayerMask.NameToLayer("Shell"))
+        {
+            Hit();
         }
     }
     private void PushShell(Vector2 direction)
@@ -56,6 +61,7 @@ public class Koopa : MonoBehaviour
     }
     private void EnterShell()
     {
+        SoundManager.Instance.PlaySound(SoundManager.PlayList.marioStomp);
         shelled = true;
         GetComponent<EntityMovement>().enabled = false;
         GetComponent<AnimatedSprites>().enabled = false;
@@ -67,5 +73,11 @@ public class Koopa : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    private void Hit()
+    {
+        GetComponent<AnimatedSprites>().enabled = false;
+        GetComponent<DeathAnimation>().enabled = true;
+        Destroy(gameObject, 3f);
     }
 }
