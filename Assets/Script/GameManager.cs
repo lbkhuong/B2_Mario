@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public int world { get; private set; }
     public int stage { get; private set; }
     public int lives { get; private set; }
+    public int coins { get; private set; }
     private void Awake()
     {
         if(instance != null)
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
     {
         SoundManager.Instance.PlayMusic(SoundManager.PlayList.music);
         lives = 3;
+        coins = 0;
         LoadLvl(1, 1);
     }
     private void LoadLvl(int world, int stage)
@@ -69,5 +71,18 @@ public class GameManager : MonoBehaviour
     {
         NewGame();
     }
-
+    public void AddCoin()
+    {
+        SoundManager.Instance.PlaySound(SoundManager.PlayList.marioPickCoin);
+        coins++;
+        if(coins == 100)
+        {
+            AddLife();
+            coins = 0;
+        }
+    }
+    public void AddLife()
+    {
+        lives++;
+    }
 }
