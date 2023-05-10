@@ -2265,6 +2265,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14dd4cb65221350438b9a4c7fa4f3be1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heigh: 6.5
+  underWorldHeigh: -9.5
 --- !u!4 &528024618 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8001586471835426880, guid: 306b9c46b6601514e90d9cb6653bdb63, type: 3}
@@ -7163,7 +7165,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374034424}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 150, y: -2, z: 0}
+  m_LocalPosition: {x: 150, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10825,6 +10827,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 18fe9e6a88527934e86f6155bb9868dc, type: 3}
   - {fileID: 8300000, guid: 1508e9f8dbd68554685e11fa45ea3426, type: 3}
   - {fileID: 8300000, guid: 8390a076c34f3494dba69fd830258981, type: 3}
+  - {fileID: 8300000, guid: 616d211a21c326540b02a01d699858ba, type: 3}
   musicSource: {fileID: 1599385912}
   effectsSource: {fileID: 912159342}
 --- !u!4 &1982724417
@@ -10903,6 +10906,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9114779075216741450, guid: 65b70367d97a6a041b6b5110249c2668, type: 3}
+      propertyPath: connection
+      value: 
+      objectReference: {fileID: 1374034425}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65b70367d97a6a041b6b5110249c2668, type: 3}
 --- !u!4 &1995378169 stripped
@@ -11295,7 +11302,7 @@ PrefabInstance:
     - target: {fileID: 6937310555924958998, guid: e62038c0504cf124bb51628b480df8f0, type: 3}
       propertyPath: item
       value: 
-      objectReference: {fileID: 841438207429839045, guid: 2f45153d43a6e8449b8dca55e0850b64, type: 3}
+      objectReference: {fileID: 1608222014282682259, guid: 30d9b35c65014314097a1b398e884949, type: 3}
     - target: {fileID: 9166230116066908815, guid: e62038c0504cf124bb51628b480df8f0, type: 3}
       propertyPath: m_Name
       value: Mystery Block (Coin)
@@ -11899,6 +11906,10 @@ PrefabInstance:
       propertyPath: connection
       value: 
       objectReference: {fileID: 1655158057}
+    - target: {fileID: 8392193013471178333, guid: ed187b71a97bea840801d7d397bb47b7, type: 3}
+      propertyPath: connection
+      value: 
+      objectReference: {fileID: 1655158057}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed187b71a97bea840801d7d397bb47b7, type: 3}
 --- !u!1001 &3611261760279162119
@@ -11914,11 +11925,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3611261760737888593, guid: 0724cbeea21c46642b57c4ace196dea7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20
+      value: 26.95
       objectReference: {fileID: 0}
     - target: {fileID: 3611261760737888593, guid: 0724cbeea21c46642b57c4ace196dea7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.94
+      value: 2.01
       objectReference: {fileID: 0}
     - target: {fileID: 3611261760737888593, guid: 0724cbeea21c46642b57c4ace196dea7, type: 3}
       propertyPath: m_LocalPosition.z

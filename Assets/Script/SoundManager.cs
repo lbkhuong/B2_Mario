@@ -18,6 +18,7 @@ public class SoundManager : MonoBehaviour
         music = 8,
         marioStomp = 9,
         shellBump = 10,
+        pipe = 11,
     }
     public List<AudioClip> audioLists;
     [SerializeField] private AudioSource musicSource;
