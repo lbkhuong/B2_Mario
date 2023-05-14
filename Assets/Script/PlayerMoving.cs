@@ -21,10 +21,26 @@ public class PlayerMoving : MonoBehaviour
     private Vector2 position;
     private Vector2 leftEdge;
     private Vector2 rightEdge;
+    private new Collider2D collider;
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        collider = GetComponent<Collider2D>();
         camera = Camera.main;
+    }
+    private void OnEnable()
+    {
+        rigidbody.isKinematic = false;
+        collider.enabled = true;
+        velocity = Vector2.zero;
+        jumping = false;
+    }
+    private void OnDisable()
+    {
+        rigidbody.isKinematic = true;
+        collider.enabled = false;
+        velocity = Vector2.zero;
+        jumping = false;
     }
 
     private void Update()

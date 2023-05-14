@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
         smallRenderer.enabled = false;
         bigRenderer.enabled = false;
         deathAnimation.enabled = true;
-        SoundManager.Instance.PauseMusic();
+        SoundManager.Instance.PauseMusic(SoundManager.PlayList.music);
         SoundManager.Instance.PlaySound(SoundManager.PlayList.marioDied);    
         GameManager.instance.ResetLvl(3f);
     }
@@ -89,6 +89,7 @@ public class Player : MonoBehaviour
     private IEnumerator StarPowerAnimation(float duration)
     {
         starPower = true;
+        SoundManager.Instance.PlaySound(SoundManager.PlayList.marioPowerUp);
         float eplased = 0f;
         while (eplased < duration)
         {
@@ -101,5 +102,18 @@ public class Player : MonoBehaviour
         }
         activeRenderer.spriteRenderer.color = Color.white;
         starPower = false;
+    }
+    public void inUnderGround(bool check)
+    {
+        if (check)
+        {
+            SoundManager.Instance.PauseMusic(SoundManager.PlayList.music);
+            SoundManager.Instance.PlayMusic(SoundManager.PlayList.marioInUnderGround);
+        }
+        else
+        {
+            SoundManager.Instance.StopMusic(SoundManager.PlayList.marioInUnderGround);
+            SoundManager.Instance.ContinueMusic(SoundManager.PlayList.music);
+        }
     }
 }

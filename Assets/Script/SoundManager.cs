@@ -19,6 +19,9 @@ public class SoundManager : MonoBehaviour
         marioStomp = 9,
         shellBump = 10,
         pipe = 11,
+        stageClear = 12,
+        marioPowerUp = 13,
+        marioInUnderGround = 14,
     }
     public List<AudioClip> audioLists;
     [SerializeField] private AudioSource musicSource;
@@ -47,18 +50,21 @@ public class SoundManager : MonoBehaviour
         musicSource.Play();
     }
 
-    public void StopMusic()
+    public void StopMusic(PlayList soundType)
     {
+        musicSource.clip = audioLists[(int)soundType];
         musicSource.Stop();
     }
 
-    public void PauseMusic()
+    public void PauseMusic(PlayList soundType)
     {
+        musicSource.clip = audioLists[(int)soundType];
         musicSource.Pause();
     }
 
-    public void ContinueMusic()
+    public void ContinueMusic(PlayList soundType)
     {
+        musicSource.clip = audioLists[(int)soundType];
         musicSource.Play();
     }
 
