@@ -13,9 +13,9 @@ public class GameManager : MonoBehaviour
     public int stage { get; private set; }
     public int lives { get; private set; }
     public int coins { get; private set; }
-    public TextMeshProUGUI textCoins;
-    public TextMeshProUGUI textLives;
-    public TextMeshProUGUI textGameOver;
+    public Text textCoins;
+    public Text textLives;
+    public Text textGameOver;
     private void Awake()
     {
         if(instance != null)
@@ -42,12 +42,12 @@ public class GameManager : MonoBehaviour
     }
     private void NewGame()
     {
-        //textGameOver.enabled = false;
+        textGameOver.enabled = false;
         SoundManager.Instance.PlayMusic(SoundManager.PlayList.music);
         lives = 3;
+     //   SetLives(3);
         coins = 0;
-        //textLives.text = "x3"; 
-        //textCoins.text = "00";
+     //   SetCoin(0);
         LoadLvl(1, 1);
     }
     public void LoadLvl(int world, int stage)
@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
     public void ResetLvl()
     {
         lives--;
-       // textLives.SetText("x" + lives.ToString());
+     //   SetLives(lives);
         if (lives > 0)
         {
             LoadLvl(world, stage);
@@ -80,25 +80,36 @@ public class GameManager : MonoBehaviour
     }
     public void GameOver()
     {
-        //textGameOver.enabled = true;
-        //SoundManager.Instance.PlaySound(SoundManager.PlayList.gameOver);
+        textGameOver.enabled = true;
+        SoundManager.Instance.PlaySound(SoundManager.PlayList.gameOver);
         NewGame();
     }
     public void AddCoin()
     {
         SoundManager.Instance.PlaySound(SoundManager.PlayList.marioPickCoin);
         coins++;
-        //textCoins.SetText(coins.ToString());
+     //   SetCoin(coins);
         if(coins == 100)
         {
             AddLife();
             coins = 0;
-           // textCoins.SetText("00");
+         //   SetCoin(coins);
         }
+    }
+    private void SetLives(int lives)
+    {
+        this.lives = lives;
+        textLives.text = "x" + lives.ToString();
+
+    }
+    private void SetCoin(int coins)
+    {
+        this.coins = coins;
+        textCoins.text = coins.ToString().PadLeft(2, '0');
     }
     public void AddLife()
     {
         lives++;
-        //textLives.SetText("x" + lives.ToString());
+       // SetLives(lives);
     }
 }
