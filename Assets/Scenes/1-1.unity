@@ -2876,7 +2876,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: x 3
+  m_Text: 
 --- !u!222 &566583982
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4092,9 +4092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26707ccfdf30299488e6688b0f8c9b6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textCoins: {fileID: 2129695338}
-  textLives: {fileID: 566583981}
-  textGameOver: {fileID: 590573016}
+  ui: {fileID: 1461412956}
 --- !u!4 &742467472 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3249715635291859842, guid: e62038c0504cf124bb51628b480df8f0, type: 3}
@@ -7959,6 +7957,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1461412955}
+  - component: {fileID: 1461412956}
   m_Layer: 0
   m_Name: GUI
   m_TagString: Untagged
@@ -7982,6 +7981,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1461412956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461412954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21b7dd4a850136b4eb86ed7341c257b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textCoins: {fileID: 2129695338}
+  textLives: {fileID: 566583981}
+  textGameOver: {fileID: 590573016}
 --- !u!4 &1467977792 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6441841789286464594, guid: 962898cbc3d9ed649b7a54a9a408f125, type: 3}
@@ -12087,7 +12101,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: 
 --- !u!222 &2129695339
 CanvasRenderer:
   m_ObjectHideFlags: 0
